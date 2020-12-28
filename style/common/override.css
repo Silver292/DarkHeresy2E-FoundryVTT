@@ -1,6 +1,6 @@
 /* IMG BORDER REMOVAL */
-img.profile { 
-  border: none !important; 
+img.profile {
+  border: none !important;
 }
 
 
@@ -79,7 +79,7 @@ font-weight: bold;
 font-weight: normal;
 }
 
-input[type="text"]:hover, 
+input[type="text"]:hover,
 input[type="text"]:focus
 select:focus,
 select:hover,
@@ -147,8 +147,8 @@ color: #FFF;
 }
 
 /* NAVIGATION BAR */
-#navigation #scene-list .scene, 
-#navigation #scene-list .scene.view, 
+#navigation #scene-list .scene,
+#navigation #scene-list .scene.view,
 #navigation #scene-list .scene.context {
 border: 1px solid rgba(255, 255, 255, 0.25);
 background: rgba(20, 50, 120, 0.9);
@@ -165,7 +165,7 @@ background: rgba(51, 51, 51, 0.9);
 color: #FFF;
 }
 
-#navigation #scene-list .scene.active, 
+#navigation #scene-list .scene.active,
 #navigation #scene-list .scene.active.gm {
 background: rgb(0 0 0 / 80%);
 border: 1px solid rgba(255, 255, 255, 0.25); /* DkGreen */
@@ -265,7 +265,7 @@ width: fit-content !important;
 
 /* SIDEBAR BACKGROUND & TEXT COLOR */
 #sidebar, .sidebar-popout {
-background: url('../../asset/image/heresy2.jpg') repeat;
+background: url('../../asset/image/heresy2.webp') repeat;
 background-position: center;
 }
 
@@ -566,5 +566,5 @@ li.folder.collapsed > .folder-header {
 }
 
 .window-app .window-content {
-    background: url("../../asset/image/background.jpg") center;
+    background: url("../../asset/image/background.webp") center;
 }
