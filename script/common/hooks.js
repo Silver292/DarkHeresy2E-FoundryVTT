@@ -24,6 +24,9 @@ import { migrateWorld } from "./migration.js";
 import { prepareCommonRoll, prepareCombatRoll, preparePsychicPowerRoll } from "./dialog.js";
 import { commonRoll, combatRoll } from "./roll.js";
 
+// Import Helpers
+import * as chat from "./chat.js";
+
 Hooks.once("init", () => {
     CONFIG.Combat.initiative = { formula: "@initiative.base + @initiative.bonus", decimals: 0 };
     CONFIG.Actor.entityClass = DarkHeresyActor;
@@ -86,3 +89,10 @@ Hooks.on("preCreateActor", (createData) => {
         createData.token.actorLink = true;
     }
 });
+
+
+/* -------------------------------------------- */
+/*  Other Hooks                                 */
+/* -------------------------------------------- */
+
+Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
