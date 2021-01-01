@@ -95,10 +95,7 @@ Hooks.once("ready", () => {
 
 Hooks.on("preCreateActor", (createData) => {
     mergeObject(createData, {
-        "token.bar1" :{ "attribute" : "wounds" },
-        "token.bar2" :{ "attribute" : "fatigue" },
-        "token.displayName" : game.settings.get('dark-heresy', 'defaultTokenDisplay'),
-        "token.displayBars" : CONST.TOKEN_DISPLAY_MODES.ALWAYS,
+        "token.displayName" : CONST.TOKEN_DISPLAY_MODES.HOVER,
         "token.disposition" : CONST.TOKEN_DISPOSITIONS.NEUTRAL,
         "token.name" : createData.name
     });
@@ -107,6 +104,29 @@ Hooks.on("preCreateActor", (createData) => {
         createData.token.actorLink = true;
     }
 });
+
+// Bar brawl hooks to reverse wounds and fatigue
+Hooks.on("preCreateToken", function(_scene, data) {
+    setProperty(data, "flags.barbrawl.resourceBars", {
+        "bar1": {
+            id: "bar1",
+            mincolor: "#C63939",
+            maxcolor: "#940000",
+            position: "bottom-inner",
+            attribute: "wounds",
+            visibility: CONST.TOKEN_DISPLAY_MODES.ALWAYS
+        },
+        "bar2": {
+            id: "bar2",
+            mincolor: "#6969CE",
+            maxcolor: "#003380",
+            position: "top-inner",
+            attribute: "fatigue",
+            visibility: CONST.TOKEN_DISPLAY_MODES.ALWAYS
+        }
+    });
+});
+
 
 
 /* -------------------------------------------- */

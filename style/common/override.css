@@ -81,7 +81,7 @@ li.folder > .folder-header h3,
 li.folder > .folder-header .create-folder, li.folder > .folder-header .create-entity {
 color: #333;
 }
-}
+
 
 li.folder > .folder-header,
 li.folder.collapsed > .folder-header {
